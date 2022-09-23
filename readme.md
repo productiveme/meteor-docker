@@ -1,7 +1,7 @@
 productiveme/meteor Docker Image
 ===
 
-### Productive.me deviation from zodern
+### Productive.me deviation from zodern/meteor
 
 The release script is updated to build for multiple architectures when pushing to Docker hub.
 `docker buildx build --platform linux/arm/v7,linux/arm64/v8,linux/amd64 ...`
