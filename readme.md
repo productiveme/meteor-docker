@@ -1,4 +1,4 @@
-zodern/meteor Docker Image
+productiveme/meteor Docker Image
 ===
 
 ### Productive.me deviation from zodern
