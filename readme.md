@@ -1,6 +1,11 @@
 zodern/meteor Docker Image
 ===
 
+### Productive.me deviation from zodern
+
+The release script is updated to build for multiple architectures when pushing to Docker hub.
+`docker buildx build --platform linux/arm/v7,linux/arm64/v8,linux/amd64 ...`
+
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/zodern/meteor-docker/Test-Publish) ![Docker Pulls](https://img.shields.io/docker/pulls/zodern/meteor)
 
 Docker image to run Meteor apps.
