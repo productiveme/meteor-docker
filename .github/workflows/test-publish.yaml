@@ -109,7 +109,3 @@ jobs:
           push: true
           tags: productiveme/meteor:root
 
-      - name: Release
-        run: semantic-release --debug
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
