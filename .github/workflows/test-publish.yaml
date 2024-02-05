@@ -87,7 +87,23 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
 
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: ./image
+          platforms: linux/arm/v7,linux/arm64/v8,linux/amd64
+          push: true
+          tags: productiveme/meteor:latest
+
+      - name: Build and push root
+        uses: docker/build-push-action@v5
+        with:
+          context: ./root-image
+          platforms: linux/arm/v7,linux/arm64/v8,linux/amd64
+          push: true
+          tags: productiveme/meteor:root
+
       - name: Release
-        run: npm run release
+        run: semantic-release --debug
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
