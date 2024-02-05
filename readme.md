@@ -6,13 +6,14 @@ productiveme/meteor Docker Image
 The release script is updated to build for multiple architectures when pushing to Docker hub.
 `docker buildx build --platform linux/arm/v7,linux/arm64/v8,linux/amd64 ...`
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/zodern/meteor-docker/Test-Publish) ![Docker Pulls](https://img.shields.io/docker/pulls/zodern/meteor)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/zodern/meteor-docker/test-publish.yaml?branch-master&style=flat-square) ![Docker Pulls](https://img.shields.io/docker/pulls/zodern/meteor?style=flat-square)
 
 Docker image to run Meteor apps.
 
 ### Features
 
-- One image supports every Meteor version
+- One image supports every Meteor version (tested with 1.2 - 2.13 and newer)
+- Mostly supports Meteor 3 (requires making `programs/server/shrinkwrap.json` [writable](https://github.com/meteor/meteor/issues/12932) due to a bug in Meteor 3)
 - Automatically uses correct node and npm version
 - Runs app as non-root user
 - Compatible with Meteor up
